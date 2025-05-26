@@ -9,7 +9,9 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-mycursor.execute("SHOW DATABASES")
+mycursor.execute("SELECT name, address FROM customers")
 
-for x in mycursor:
+myresult = mycursor.fetchall()
+
+for x in myresult:
   print(x)
